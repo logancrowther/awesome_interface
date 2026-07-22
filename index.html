@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Awesome Interface</title>
+<style>
+  :root {
+    color-scheme: light;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    color: #111;
+  }
+  .page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px 40px 64px;
+  }
+  header {
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+  }
+  header p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #9a9a9a;
+  }
+  .cards {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+  .card {
+    position: relative;
+    display: block;
+    width: 420px;
+    height: 235px;
+    border-radius: 14px;
+    overflow: hidden;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  /* Village Chronicles card */
+  .card-village {
+    background:
+      radial-gradient(1px 1px at 20% 15%, rgba(255,255,255,0.9) 0%, transparent 60%),
+      radial-gradient(1px 1px at 60% 10%, rgba(255,255,255,0.7) 0%, transparent 60%),
+      radial-gradient(1px 1px at 80% 25%, rgba(255,255,255,0.8) 0%, transparent 60%),
+      radial-gradient(1px 1px at 35% 8%, rgba(255,255,255,0.6) 0%, transparent 60%),
+      radial-gradient(1px 1px at 90% 12%, rgba(255,255,255,0.9) 0%, transparent 60%),
+      radial-gradient(1px 1px at 10% 30%, rgba(255,255,255,0.5) 0%, transparent 60%),
+      linear-gradient(180deg, #0b0e1a 0%, #14101a 45%, #201410 75%, #2b1a10 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-village span {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #d8b158;
+    text-transform: uppercase;
+  }
+  /* Stickman Archive card */
+  .card-stickman {
+    background: #ffffff;
+  }
+  .card-stickman .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: 800;
+    color: #111;
+    white-space: nowrap;
+  }
+  .stickman {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    color: #111;
+  }
+  .more-soon {
+    text-align: center;
+    color: #9a9a9a;
+    font-size: 14px;
+    margin-top: 96px;
+  }
+  footer {
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 13px;
+    margin-top: 32px;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Awesome Interface</h1>
+      <p>Awesome Games</p>
+    </header>
+
+    <div class="cards">
+      <a class="card card-village" href="https://villagechronicles.awesomeinterface.com/">
+        <span>Village Chronicles</span>
+      </a>
+
+      <a class="card card-stickman" href="https://stickmanarchive.awesomeinterface.com/">
+        <div class="title">Stickman Archive</div>
+      </a>
+    </div>
+
+    <p class="more-soon">More coming soon&hellip;</p>
+
+    <footer>&copy; 2026 Awesome Interface. All rights reserved.</footer>
+  </div>
+
+  <script>
+    (function () {
+      var svg =
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">' +
+        '<circle cx="12" cy="4" r="2.2"/>' +
+        '<line x1="12" y1="6.5" x2="12" y2="15"/>' +
+        '<line x1="12" y1="9" x2="6" y2="7"/>' +
+        '<line x1="12" y1="9" x2="18" y2="7"/>' +
+        '<line x1="12" y1="15" x2="7" y2="22"/>' +
+        '<line x1="12" y1="15" x2="17" y2="22"/>' +
+        '</svg>';
+
+      var positions = [
+        [8, 5], [22, 3], [37, 12], [38, 8], [58, 2], [78, 4], [95, 10],
+        [4, 22], [15, 30], [30, 26], [48, 32], [63, 24], [90, 28],
+        [2, 45], [12, 52], [25, 48], [38, 55], [50, 46], [67, 52], [83, 44],
+        [8, 68], [20, 72], [35, 75], [55, 66], [70, 78], [88, 70]
+      ];
+
+      var card = document.querySelector('.card-stickman');
+      positions.forEach(function (pos, i) {
+        var wrap = document.createElement('div');
+        wrap.className = 'stickman';
+        wrap.style.left = pos[0] + '%';
+        wrap.style.top = pos[1] + '%';
+        var rotation = (i * 37) % 40 - 20;
+        wrap.style.transform = 'rotate(' + rotation + 'deg)';
+        wrap.innerHTML = svg;
+        card.appendChild(wrap);
+      });
+    })();
+  </script>
+</body>
+</html>
