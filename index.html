@@ -127,6 +127,32 @@
     height: auto;
     display: block;
   }
+  /* Tower Overwatch card */
+  .card-tower {
+    background: linear-gradient(180deg, #07090f 0%, #0e1220 45%, #2a2030 72%, #6b4426 92%, #8a5528 100%);
+  }
+  .card-tower .scene {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .card-tower .title {
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-family: "Arial Narrow", Impact, "Helvetica Neue", sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ffb454;
+    white-space: nowrap;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
   .more-soon {
     text-align: center;
     color: #9a9a9a;
@@ -163,6 +189,36 @@
           <path d="M0,28 C70,10 130,38 200,24 C260,12 320,34 420,14 L420,40 L0,40 Z" fill="rgba(255,255,255,0.16)"></path>
         </svg>
         <div class="title">Abyssal Odyssey</div>
+      </a>
+
+      <a class="card card-tower" href="https://toweroverwatch.awesomeinterface.com/">
+        <svg class="scene" viewBox="0 0 420 235" preserveAspectRatio="none" aria-hidden="true">
+          <!-- distant skyline -->
+          <path d="M0,200 L0,188 L18,188 L18,176 L34,176 L34,184 L52,184 L52,170 L64,170 L64,182 L90,182 L90,174 L104,174 L104,186 L130,186 L130,178 L150,178 L150,190 L190,190 L190,180 L206,180 L206,188 L240,188 L240,172 L252,172 L252,184 L280,184 L280,178 L300,178 L300,190 L420,190 L420,200 Z" fill="#141826"/>
+          <!-- ground -->
+          <rect x="0" y="198" width="420" height="37" fill="#07090f"/>
+          <!-- watchtower -->
+          <g transform="translate(16 0)">
+          <g fill="#05060a">
+            <rect x="340" y="92" width="44" height="8"/>
+            <path d="M336,92 L362,74 L388,92 Z"/>
+            <rect x="342" y="100" width="40" height="22"/>
+            <path d="M348,122 L376,122 L384,200 L340,200 Z"/>
+          </g>
+          <rect x="350" y="104" width="24" height="8" fill="#ffb454" opacity="0.85"/>
+          <path d="M346,140 L378,160 M378,140 L346,160 M343,168 L381,186 M381,168 L343,186" stroke="#1a1d26" stroke-width="2"/>
+          </g>
+          <!-- scope reticle -->
+          <g stroke="#ece8de" stroke-opacity="0.35" fill="none" stroke-width="1">
+            <circle cx="181" cy="117" r="62"/>
+            <line x1="101" y1="117" x2="161" y2="117"/>
+            <line x1="201" y1="117" x2="261" y2="117"/>
+            <line x1="181" y1="45" x2="181" y2="97"/>
+            <line x1="181" y1="137" x2="181" y2="189"/>
+          </g>
+          <circle cx="181" cy="117" r="2" fill="#ff4d45"/>
+        </svg>
+        <div class="title">Tower Overwatch</div>
       </a>
     </div>
 
